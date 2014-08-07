@@ -38,9 +38,9 @@ import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse
 import org.elasticsearch.action.admin.indices.flush.FlushRequest
 import org.elasticsearch.action.admin.indices.flush.FlushRequestBuilder
 import org.elasticsearch.action.admin.indices.flush.FlushResponse
-import org.elasticsearch.action.admin.indices.gateway.snapshot.GatewaySnapshotRequest
-import org.elasticsearch.action.admin.indices.gateway.snapshot.GatewaySnapshotRequestBuilder
-import org.elasticsearch.action.admin.indices.gateway.snapshot.GatewaySnapshotResponse
+import org.elasticsearch.action.admin.indices.cluster.snapshot.GatewaySnapshotRequest
+import org.elasticsearch.action.admin.indices.cluster.snapshot.GatewaySnapshotRequestBuilder
+import org.elasticsearch.action.admin.indices.cluster.snapshot.GatewaySnapshotResponse
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequest
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse
