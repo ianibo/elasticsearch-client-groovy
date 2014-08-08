@@ -38,9 +38,9 @@ import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse
 import org.elasticsearch.action.admin.indices.flush.FlushRequest
 import org.elasticsearch.action.admin.indices.flush.FlushRequestBuilder
 import org.elasticsearch.action.admin.indices.flush.FlushResponse
-import org.elasticsearch.action.admin.indices.cluster.snapshot.GatewaySnapshotRequest
-import org.elasticsearch.action.admin.indices.cluster.snapshot.GatewaySnapshotRequestBuilder
-import org.elasticsearch.action.admin.indices.cluster.snapshot.GatewaySnapshotResponse
+import org.elasticsearch.action.admin.cluster.snapshots.create.CreateSnapshotRequest
+import org.elasticsearch.action.admin.cluster.snapshots.create.CreateSnapshotRequestBuilder
+import org.elasticsearch.action.admin.cluster.snapshots.create.CreateSnapshotResponse
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequest
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse
@@ -336,25 +336,25 @@ class GIndicesAdminClient {
 
     // GATEWAY SNAPSHOT
 
-    GatewaySnapshotRequestBuilder prepareGatewaySnapshot(String... indices) {
+    CreateSnapshotRequestBuilder prepareGatewaySnapshot(String... indices) {
         indicesAdminClient.prepareGatewaySnapshot(indices)
     }
 
-    GActionFuture<GatewaySnapshotResponse> gatewaySnapshot(Closure c) {
-        GatewaySnapshotRequest request = new GatewaySnapshotRequest()
+    GActionFuture<CreateSnapshotResponse> gatewaySnapshot(Closure c) {
+        CreateSnapshotRequest request = new CreateSnapshotRequest()
         c.setDelegate request
         c.resolveStrategy = gClient.resolveStrategy
         c.call()
         gatewaySnapshot(request)
     }
 
-    GActionFuture<GatewaySnapshotResponse> gatewaySnapshot(GatewaySnapshotRequest request) {
-        GActionFuture<GatewaySnapshotResponse> future = new GActionFuture<GatewaySnapshotResponse>(internalClient.threadPool(), request)
+    GActionFuture<CreateSnapshotResponse> gatewaySnapshot(CreateSnapshotRequest request) {
+        GActionFuture<CreateSnapshotResponse> future = new GActionFuture<CreateSnapshotResponse>(internalClient.threadPool(), request)
         indicesAdminClient.gatewaySnapshot(request, future)
         return future
     }
 
-    void gatewaySnapshot(GatewaySnapshotRequest request, ActionListener<GatewaySnapshotResponse> listener) {
+    void gatewaySnapshot(CreateSnapshotRequest request, ActionListener<CreateSnapshotResponse> listener) {
         indicesAdminClient.gatewaySnapshot(request, listener)
     }
 
