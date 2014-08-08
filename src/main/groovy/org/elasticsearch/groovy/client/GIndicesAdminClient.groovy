@@ -71,7 +71,7 @@ import org.elasticsearch.action.admin.indices.warmer.put.PutWarmerRequest
 import org.elasticsearch.action.admin.indices.warmer.put.PutWarmerRequestBuilder
 import org.elasticsearch.action.admin.indices.warmer.put.PutWarmerResponse
 import org.elasticsearch.client.IndicesAdminClient
-import org.elasticsearch.client.internal.InternalClient
+import org.elasticsearch.client.ElasticsearchClient
 import org.elasticsearch.groovy.client.action.GActionFuture
 import org.elasticsearch.groovy.common.xcontent.GXContentBuilder
 
@@ -132,7 +132,7 @@ class GIndicesAdminClient {
 
     private final GClient gClient
 
-    private final InternalClient internalClient
+    private final ElasticsearchClient internalClient
 
     final IndicesAdminClient indicesAdminClient
 

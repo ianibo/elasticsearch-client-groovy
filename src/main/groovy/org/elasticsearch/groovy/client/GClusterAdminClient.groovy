@@ -39,7 +39,7 @@ import org.elasticsearch.action.admin.cluster.node.restart.NodesRestartRequestBu
 import org.elasticsearch.action.admin.cluster.node.shutdown.NodesShutdownRequestBuilder
 import org.elasticsearch.action.admin.cluster.node.stats.NodesStatsRequestBuilder
 import org.elasticsearch.action.admin.cluster.state.ClusterStateRequestBuilder
-import org.elasticsearch.client.internal.InternalClient
+import org.elasticsearch.client.ElasticsearchClient
 import org.elasticsearch.groovy.client.action.GActionFuture
 
 /**
@@ -49,7 +49,7 @@ class GClusterAdminClient {
 
     private final GClient gClient
 
-    private final InternalClient internalClient
+    private final ElasticsearchClient internalClient
 
     final ClusterAdminClient clusterAdminClient
 

@@ -48,7 +48,7 @@ import org.elasticsearch.action.update.UpdateRequest
 import org.elasticsearch.action.update.UpdateRequestBuilder
 import org.elasticsearch.action.update.UpdateResponse
 import org.elasticsearch.client.Client
-import org.elasticsearch.client.internal.InternalClient
+import org.elasticsearch.client.ElasticsearchClient
 import org.elasticsearch.common.xcontent.XContentType
 import org.elasticsearch.groovy.client.action.GActionFuture
 import org.elasticsearch.groovy.common.xcontent.GXContentBuilder
@@ -188,7 +188,7 @@ class GClient {
 
     int resolveStrategy = Closure.DELEGATE_FIRST
 
-    private final InternalClient internalClient
+    private final ElasticsearchClient internalClient
 
     final GAdminClient admin
 
