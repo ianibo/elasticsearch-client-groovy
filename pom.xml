@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.elasticsearch</groupId>
     <artifactId>elasticsearch-client-groovy</artifactId>
-    <version>1.3.1</version>
+    <version>1.3.2</version>
     <packaging>jar</packaging>
     <name>Elasticsearch Groovy language plugin</name>
     <description>The Groovy language plugin allows to have groovy as the language of scripts to execute.</description>
@@ -24,6 +24,15 @@
         <url>http://github.com/elasticsearch/elasticsearch-client-groovy</url>
     </scm>
 
+    <distributionManagement>
+      <!-- Publish versioned releases here -->
+      <repository>
+        <id>knowint.public</id>
+        <name>K-Int Public Repo</name>
+        <url>http://nexus.k-int.com/content/repositories/releases</url>
+      </repository>
+    <distributionManagement>
+
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -31,7 +40,7 @@
     </parent>
 
     <properties>
-        <elasticsearch.version>1.3.1</elasticsearch.version>
+        <elasticsearch.version>1.3.2</elasticsearch.version>
         <lucene.version>4.9.0</lucene.version>
         <tests.jvms>1</tests.jvms>
         <tests.shuffle>true</tests.shuffle>
