@@ -30,13 +30,12 @@
     </scm>
 
     <distributionManagement>
-      <!-- Publish versioned releases here -->
       <repository>
         <id>knowint.public</id>
         <name>K-Int Public Repo</name>
         <url>http://nexus.k-int.com/content/repositories/releases</url>
       </repository>
-    <distributionManagement>
+    </distributionManagement>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
